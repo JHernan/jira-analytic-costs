@@ -77,7 +77,9 @@ atlassian_connect:
         vendor:
             name: 'Jira Analytic Costs'
             url: 'https://marketplace.atlassian.com/vendors/1211528'
-        baseUrl: 'http://1fd99587.ngrok.io/'
+        authentication:
+            type: jwt
+        baseUrl: '%atlassian_connect_base_url%'
         lifecycle:
             installed: '/handshake'
         scopes: ['READ', 'WRITE']
@@ -91,4 +93,4 @@ atlassian_connect:
                         value: 'Tab Name'
 
     dev:
-      baseUrl: 'http://localhost:8888'
+      baseUrl: '%atlassian_connect_base_url%'
